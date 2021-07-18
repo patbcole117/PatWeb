@@ -1,0 +1,17 @@
+#center_box {
+    align-self: center;
+    border: 1px solid black;
+
+    margin-top: 30vh;
+
+    display: flex;
+    justify-content: center;
+}
+
+#text_box {
+    text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-left: 25vh;
+    margin-right: 25vh;
+}

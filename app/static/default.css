@@ -1,0 +1,25 @@
+.big {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #202020;
+    text-decoration: none;
+}
+
+a:hover {
+    color: aqua;
+    text-decoration: none;
+}

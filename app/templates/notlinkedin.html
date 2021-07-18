@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linkedin</title>
+    <link rel="stylesheet" href="/static/default.css">
+    <link rel="stylesheet" href="/static/notlinkedin.css">
+</head>
+<body>
+    <body>
+        <div class="big">
+            <div class="medium" id="top"></div>
+                <div class="medium" id="linkedin_box">
+                    <div class="tiny" id="linkedin_text">
+                        I do not to have a LinkedIn account.
+                    </div>
+                    <div class="tiny" id="source_text">
+                        {% for i in items %}
+                        <p><a href="{{ i['url'] }}">{{ i['citation'] }}</a></p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="/static/default.js"></script>
+
+    </body>
+</body>
+</html>

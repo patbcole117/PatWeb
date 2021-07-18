@@ -1,0 +1,21 @@
+#linkedin_box {
+    align-self: center;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#linkedin_text {
+    text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-left: 25vh;
+    margin-right: 25vh;
+}
+
+#source_text {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-left: 25vh;
+    margin-right: 25vh;
+}
