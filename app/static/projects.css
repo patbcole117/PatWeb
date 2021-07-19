@@ -1,0 +1,45 @@
+#projects {
+    margin-top: 5vh;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.project-title {
+    display: flex;
+    justify-content: center;
+}
+
+.project-infobox {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.project-links {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    padding: 2vh;
+
+    width: 10%;
+}
+
+.project-desc {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    margin-left: 5vh;
+    padding: 2vh;
+
+    width: 80%;
+}

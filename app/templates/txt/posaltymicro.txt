@@ -1,0 +1,269 @@
+
+Gyokuro LLC                                                      Patrick Coleman
+                                                                 2021/07/17
+
+Title: SaltyMicro Project Outline
+Author: Patrick Coleman
+Date: July 17th, 2021
+
+Introduction
+     SaltyMicro is a suite of micro-services intended to gather, save, predict 
+     and display data from the popular website https://www.SaltyBet.com. The 
+     suite is intended to be comprised of 4 programs, although only 3 currently 
+     are in development.
+     
+     Until this project, I was used to creating singular monolithic programs. 
+     After reading about Google's Borg system and Netflix's microservice 
+     architecture, I created this project to explore some new design methods and
+     tools. 
+
+What is SaltyBet?
+     For those of you who don't know (most people), SaltyBet is akin to a 
+     virtual version of The Ultimate Fighting Championship. At www.SaltyBet.com is 
+     a live stream of virtual, AI-controlled, fan-made characters duking it out 
+     24/7. Spectators tune in to watch fights and bet fake-money (known as 
+     "salt") on their favorite characters.There are thousands of characters; 
+     from Luke Skywalker to Ronald McDonald, you never know who will be 
+     victorious. 
+     
+     If your familiar with fighting games like Mortal Kombat, Street Fighter, or
+     Tekken, SaltyBet will look quite familiar. SaltyBet is built on the 2D 
+     fighting game engine Mugen. Released in 1999 by Elecbyte, Mugen gained 
+     notoriety by allowing players to create and import their own fighters. At 
+     some point Salty, Saltybet's creator, saw the potential in Mugen's 
+     community and created SaltyBet where the Mugen community could compare 
+     each others custom fighters in front of a live audience.
+     
+SaltyMicro
+     SaltyMicro is a suite of programs which collect, save, predict, and display
+     data from SaltyBet. Presently, there are 3 programs: SaltyBoutObserver (SBO), 
+     SaltyDataController (SDC), and the SaltyUserInterface (SUI). The SBO watches 
+     SaltyBet and scrapes data about every fight; this data is sent to the SDC for
+     storage and processing. Lastly, the SUI requests information from the SDC to
+     display for the user. Below is a diagram:
+     
+
+                         +----------+
+                         | saltybet |   1. a fight ends.
+                         +----+-----+
+                              |
+                           +--V--+
+                           | SBO |      2. SBO sends fight data to SDC.
+                           +--+--+
+               +---+          |
+               |   |<------+--V--+
+               |SQL|       | SDC |      3. SDC formats data and saves it.
+               |   |------>+--+--+
+               +---+          |
+                           +--V--+
+                           | SUI |      4. SUI displays information for users.
+                           +-----+
+
+
+SaltyBoutObserver
+     The SaltyBoutObserver(SBO) is part of the SaltyMicro software suite. Its 
+     function is to observe SaltyBet. When a bout ends, SBO will scrape data of 
+     the bout and send it to the SDC for further processing. SBO will gather 
+     information such as: fighter names, bets, winners, matchmaking mode, and the 
+     date. When this information reaches the SDC it will be processed further to
+     reveal additional information. Navigating to: <sbo-url>/api/v1/help 
+     will display an updated list of API options.
+     
+     ENVIRONMENT VARIABLES:   
+                    SBO_HOST=<sbo-ip> 
+                    SBO_PORT=<sbo-port>
+                    SBO_SDC_URL=<sdc-url> 
+                    SBO_SALTY_URL='https://www.saltybet.com/state.json'
+
+SaltyDataController
+     The SaltyDataController (SDC) is part of the SaltyMicro software suite. Its
+     function is to process information from the SBO and store it in a database.
+     This is the brains of the SaltyMicro suite. When the SBO sends data to the 
+     SDC, it will insert a new row into the BOUTS table in the database. The BOUTS 
+     table contains fighter-names, bets, winner, matchmaking-type, date, and 
+     whether the bout was an upset (the underdog won). 
+     
+     In addition the SDC will scrape out the Fighters and try to find them in the
+     FIGHTERS table. If the fighter is already in the database, the SDC will update
+     their stats with the new information aquired from their recent bout. The 
+     FIGHTERS table contains a lot of information including obvious information
+     like the fighter's name, along with some more interesting information like 
+     win/loss record, record winning streak, number of upsets, and an ELO rakning.
+     
+     The ELO ranking system is similar to the one used to rank professional chess
+     players in the FIDE World Chess Federation. It uses a K value of 40 and a 
+     baseline ELO of 2000 by default. This means a fighter never seen before by 
+     the SDC will have an elo of 2000.
+     
+     The SDC has a robust API, allowing external devices to ask the SDC for data.
+     FIGHTERS and BOUTS can be requested based on any field in the table. No 
+     custom SQL can be passed to the database, all queries are hard-coded in the
+     SDC and thus data must be asked for through the SDC API. Navigating to:
+     <sdc-url>/api/v1/help will display an updated list of API options. All data
+     returned from the SDC is in json format.
+     
+     ENVIRONMENT VARIABLES:
+                    SDC_HOST=<sdc_ip>
+                    SDC_PORT=<sdc_port>
+                    SDC_SQL_HOST=<sql-ip>
+                    SDC_SQL_PORT=<sql_port>
+                    SDC_SQL_USER-<sql_user>
+                    SDC_SQL_SECRET=<sql_secret>
+                    SDC_SQL_DEFAULT_DB=<sql_default_db>
+                    SDC_SQL_DB=<sql_db>
+                    SDC_SQL_DROP=[true, false]
+
+SaltyUserInterface
+     The SaltyUserInterface (SUI, pronounced like the name Stewie with out the "t")
+     is a dashboard, more like a command center, for the SaltyMicro suite. SUI 
+     has pages which display all sorts of information; including the latest 
+     bouts, newest fighters, and the configurations of SDC, SBO, and SUI for 
+     troubleshooting purposes. If the SaltyMicro suite is not functioning 
+     correctly, the Configurations tab of SUI will likely help resolve the issue.
+     In addition, SUI has pages for browsing through all the Fighters and Bouts 
+     recorded by the SDC.
+     
+     All the information displayed in SUI is retrieved from the SDC through GET
+     requests. The SDC sends information in json format and SUI will format it
+     to be more pretty and display it to the user.
+     
+     ENVIRONMENT VARIABLES:
+                    SUI_HOST=<sui-ip>
+                    SUI_PORT=<sui-port>
+                    SUI_SBO_URL=<sbo_url>
+                    SUI_SDC_URL=<sdc_url>
+     
+Environment
+     The environment is flexible. All three programs are designed to run in 
+     essentially limitless configurations as long as the environment variables 
+     are configured correctly.
+     
+     I have configured the SDC, SBO and Postgres database to run in containers 
+     behind an NGINX reverse-proxy to perform proxy-passes based on the url used
+     to connect. This configuration runs on a lightweight alpine-linux machine. 
+     With the help of docker-compose, i can deploy this NGINX, SDC, SBO, Postgres
+     configuration on any linux machine in about 30 seconds. Docker is truly an
+     amazing piece of technology! Below is a diagram of my setup:
+     
+                         +---------------+
+                         |linux vm       | 1. traffic is forwarded into
+                         | +-----------+ |    the container network to
+                         | |docker     | |    the NGINX container.
+                         | |network  <-+-+------------------------------
+                         | |     |     | |
+                         | +-----+-----+ |
+                         |       |       |
+                         +-------+-------+
+                                 |
+                                 | 2. traffic is proxied to
+                                 |    the correct microservice
+                                 |
+                              +--v--+
+                              |NGINX|
+                              +-----+
+                              |     |
+                            +-v-+ +-v-+
+                            |SDC| |SBO|
+                            +---+ +-+-+
+                              |
+                            +-v-+
+                            |SQL|
+                            +---+
+
+     I have configured SUI on a separate vm in a similar way, see below:
+     
+                         +---------------+
+                         |linux vm       |
+                         | +-----------+ |
+                         | |docker     | |
+                         | |network  <-+-+----
+                         | |     |     | |
+                         | +-----+-----+ |
+                         |       |       |
+                         +-------+-------+
+                                 |
+                              +--v--+
+                              |NGINX|
+                              +--+--+
+                                 |
+                               +-v-+
+                               |SUI|
+                               +---+ 
+                               
+     Adding these configurations together produces the environment below:
+     
+                     +---------------+
+                     |linux vm       |
+                     | +-----------+ |  1. a user requests information
+                     | |docker     | |     on a particular fighter.
+                     | |network  <-------------
+                     | |     |     | |
+               +---------------------------------------------->
+               |     |       |       |     6. sui formats sdc reply
+               |     +-------+-------+        and displays it to
+               |             |                the user.
+               |          +--v--+
+               |          |NGINX|
+               |          +--+--+
+               |             |
+               |           +-v-+
+               |           |SUI|
+               |           +--++
+5. sdc replies.|              |
+               |              | 2. sui forwards this request
+               |              |    to the sdc api.
+               |     +--------+------+
+               |     |linux vm|      |
+               |     | +------+----+ |
+               |     | |dockerv    | |
+               |     | |network    | |
+               |     | |           | |
+               |     | +-----+-----+ |
+               |     |       |       |
+               |     +-------+-------+
+               |             |
+               |             | 3. NGINX passes the request
+               |             |    to the sdc.
+               |             |
+               |          +--v--+
+               +----------+NGINX|
+                          +-----+
+                          |     |
+                        +-v-+ +-v-+
+                        |SDC| |SBO|
+                        +-+-+ +---+
+                          |   4. sdc queries the database.
+                        +-v-+
+                        |SQL|
+                        +---+
+     
+     Again, these programs can be deployed in a wide variety of ways. I chose 
+     this route because I wanted to experiment with Docker, NGINX, and alpine 
+     linux vms. You could easily deploy the SaltyMicro suite on one VM with no
+     containerization. However the latter method would be much less portable.
+     I have a docker-compose.yaml file on each vm that will boot the entire 
+     system in about 5 seconds.
+     
+     For my setup, if any revisions are made to the code I simply have to clone
+     the git repository and recompile the containers. Deploying a new version 
+     only takes about 30 seconds. 
+     
+     None of the programs require the others to run. They simply wait for 
+     requests. If the SBO goes down (for an update perhaps) it will not impact 
+     the SDC or SUI at all. In fact, SUI will report it has lost contact with
+     the SBO in the configurations tab. Once the SBO is back online, SUI will regain
+     connectivity.
+     
+     Likewise if the SDC goes offline, it will not hurt SBO or SUI. However all
+     the data the SBO tries to send to the SDC will be lost. This means if the 
+     SDC goes down the database will not be able to be accessed or updated. Again
+     , this does not impact the ability for the SUI or SBO to operate, however 
+     it does mean data will not be captured.
+     
+     SUI is simply a viewport. If SUI goes offline, the rest of the suite will
+     continue to operate. This means data will still be collected and can be viewed
+     directly through the SDC API, or once SUI is back online.
+                              
+Warnings
+
+Future Development

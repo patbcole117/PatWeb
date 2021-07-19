@@ -28,3 +28,28 @@ def notlinedin():
 @app.route('/contact')
 def contact():
     return render_template('contact.html', title='contact')
+
+@app.route('/projects')
+def projects():
+
+    # project: {'title': 'PROJECT TITLE', 'links': [{'url': 'LINK_1 URL', 'title': 'LINK_1 TITLE'}], 'desc': 'PROJECT DESCRIPTION'}
+    project_list = []
+
+    project_SaltyMicro = {'title': 'SaltyMicro', 'links': [], 'desc': ''}
+
+    project_SaltyMicro['links'].append({'url': '/pos/saltymicro', 'title': 'project outline'})
+    project_SaltyMicro['links'].append({'url': 'https://github.com/patbcole117/SBOv2', 'title': 'github - sbo'})
+    project_SaltyMicro['links'].append({'url': 'https://github.com/patbcole117/SDCv2', 'title': 'github - sdc'})
+    project_SaltyMicro['links'].append({'url': 'https://github.com/patbcole117/SUIv2', 'title': 'github - sui'})
+    project_SaltyMicro['links'].append({'url': 'https://gyokuro.info/', 'title': 'website'})
+
+    f = open('app/templates/txt/descsaltymicro.txt', 'r')
+    project_SaltyMicro['desc'] = f.read()
+
+    project_list.append(project_SaltyMicro)
+
+    return render_template('projects.html', title='projects', project_list=project_list)
+
+@app.route('/pos/saltymicro')
+def posaltymicro():
+    return render_template('/pos/saltymicro.html', title='saltymicro outline')

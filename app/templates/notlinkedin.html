@@ -10,13 +10,13 @@
 </head>
 <body>
     <body>
-        <div class="big">
-            <div class="medium" id="top"></div>
-                <div class="medium" id="linkedin_box">
-                    <div class="tiny" id="linkedin_text">
+        <div class="v-flex">
+            <div id="top">{% include 'elements/e_top.html' %}</div>
+                <div id="linkedin_box">
+                    <div id="linkedin_text">
                         I do not to have a LinkedIn account.
                     </div>
-                    <div class="tiny" id="source_text">
+                    <div id="source_text">
                         {% for i in items %}
                         <p><a href="{{ i['url'] }}">{{ i['citation'] }}</a></p>
                         {% endfor %}
@@ -24,10 +24,6 @@
                 </div>
             </div>
         </div>
-    
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="/static/default.js"></script>
-
     </body>
 </body>
 </html>
