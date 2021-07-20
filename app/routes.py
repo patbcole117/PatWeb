@@ -41,7 +41,7 @@ def projects():
     project_SaltyMicro['links'].append({'url': 'https://github.com/patbcole117/SBOv2', 'title': 'github - sbo'})
     project_SaltyMicro['links'].append({'url': 'https://github.com/patbcole117/SDCv2', 'title': 'github - sdc'})
     project_SaltyMicro['links'].append({'url': 'https://github.com/patbcole117/SUIv2', 'title': 'github - sui'})
-    project_SaltyMicro['links'].append({'url': 'https://gyokuro.info/', 'title': 'website'})
+    project_SaltyMicro['links'].append({'url': 'https://saltymicro.gyokuro.info/', 'title': 'website'})
 
     f = open('app/templates/txt/descsaltymicro.txt', 'r')
     project_SaltyMicro['desc'] = f.read()
