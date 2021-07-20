@@ -6,21 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
     <link rel="stylesheet" href="/static/default.css">
-    <link rel="stylesheet" href="/static/saltymicro.css">
+    <link rel="stylesheet" href="/static/homenet.css">
 </head>
 <body>
 
     <div class="v-flex">
 
         <div id="top">{% include 'elements/e_top.html' %}</div>
-
+        
         <div class="pre-box">
+
             <pre class=pre_txt>
-            {% include 'txt/posaltymicro.txt' %}
+            {% include 'txt/poshomenet1.txt' %}
             </pre>
+            <img src="/static/img/homenet-physical.png" alt="homenet-physical.png">
+
+            <pre class=pre_txt>
+                {% include 'txt/poshomenet2.txt' %}
+            </pre>
+            <img src="/static/img/homenet-logical.png" alt="homenet-logical.png">
+
+            <pre class=pre_txt>
+                {% include 'txt/poshomenet3.txt' %}
+            </pre>
+
         </div>
 
     </div>
-    
+
 </body>
 </html>

@@ -1,19 +1,6 @@
 .v-flex {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 12px;
-}
-
-.h-flex {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
 
     color: black;
     font-family: 'Courier New', Courier, monospace;

@@ -9,21 +9,28 @@
     <link rel="stylesheet" href="/static/notlinkedin.css">
 </head>
 <body>
-    <body>
-        <div class="v-flex">
-            <div id="top">{% include 'elements/e_top.html' %}</div>
-                <div id="linkedin_box">
-                    <div id="linkedin_text">
-                        I do not to have a LinkedIn account.
-                    </div>
-                    <div id="source_text">
-                        {% for i in items %}
-                        <p><a href="{{ i['url'] }}">{{ i['citation'] }}</a></p>
-                        {% endfor %}
-                    </div>
-                </div>
+
+    <div class="v-flex">
+
+        <div id="top">{% include 'elements/e_top.html' %}</div>
+
+        <div id="linkedin_box">
+
+            <div id="linkedin_text">
+                I do not to have a LinkedIn account.
             </div>
+
+            <div id="source_text">
+                {% for i in items %}
+                <p><a href="{{ i['url'] }}">{{ i['citation'] }}</a></p>
+                {% endfor %}
+            </div>
+
         </div>
-    </body>
+
+        </div>
+
+    </div>
+
 </body>
 </html>

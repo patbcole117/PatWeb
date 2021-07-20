@@ -35,6 +35,8 @@ def projects():
     # project: {'title': 'PROJECT TITLE', 'links': [{'url': 'LINK_1 URL', 'title': 'LINK_1 TITLE'}], 'desc': 'PROJECT DESCRIPTION'}
     project_list = []
 
+    # Project 1. SaltyMicro
+
     project_SaltyMicro = {'title': 'SaltyMicro', 'links': [], 'desc': ''}
 
     project_SaltyMicro['links'].append({'url': '/pos/saltymicro', 'title': 'project outline'})
@@ -48,8 +50,23 @@ def projects():
 
     project_list.append(project_SaltyMicro)
 
-    return render_template('projects.html', title='projects', project_list=project_list)
+    # Project 2. Homenet
+
+    project_Homenet = {'title': 'Homenet', 'links': [], 'desc': ''}
+
+    project_Homenet['links'].append({'url': '/pos/homenet', 'title': 'project outline'})
+
+    f = open('app/templates/txt/deschomenet.txt', 'r')
+    project_Homenet['desc'] = f.read()
+
+    project_list.append(project_Homenet)
+
+    return render_template('projects.html', title='projects', project_list=sorted(project_list, key=lambda proj: proj['title']))
 
 @app.route('/pos/saltymicro')
 def posaltymicro():
     return render_template('/pos/saltymicro.html', title='saltymicro outline')
+
+@app.route('/pos/homenet')
+def poshomenet():
+    return render_template('/pos/homenet.html', title='homenet outline')

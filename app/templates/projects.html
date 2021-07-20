@@ -10,22 +10,33 @@
 </head>
 <body>
     <div class="v-flex">
+
         <div id="top">{% include 'elements/e_top.html' %}</div>
-        <div class="v-flex" id="projects">
+
+        <div class="v-flex">
             {% for p in project_list %}
-            <div class="project" id="project-1">
+
+            <div class="project">
+
                 <div class="project-title">{{p['title']}}</div>
+
                 <div class="project-infobox">
+
                     <div class="project-links">
                         {% for l in p['links'] %}
-                        <a href="{{l['url']}}">{{l['title']}}</a>
+                            <a href="{{l['url']}}">{{l['title']}}</a>
                         {% endfor %}
                     </div>
-                    <div class="project-desc">{{p['desc']}}</div>
+
+                    <div class="project-desc">
+                        <div>{{p['desc']}}</div>
+                    </div>
+
                 </div>
             </div>
             {% endfor %}
         </div>
+
     </div>
 </body>
 </html>

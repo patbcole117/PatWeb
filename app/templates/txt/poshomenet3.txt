@@ -1,0 +1,37 @@
+
+Disaster Recovery:
+     In the event that RAYMAN (Proxmox) fails, the entire network will need to 
+     be rebuilt. RAYMAN used to run RAID-0, however after experiencing a drive 
+     failure I decided to use RAID-5 after rebuilding. RAID-5 should protect 
+     against drive failures. However in the event where RAID-5 does not suffice,
+     below is instructions for a manual rebuild when only GOLDENEYE backups are 
+     available (RAID rebuild wont work).
+     
+          1. Replace the HDDs in RAYMAN. Configure them for RAID-5.
+          2. Use Etcher to create a bootable USB for Proxmox.
+          3. Reinstall Proxmox on RAYMAN, check diagrams for networking information.
+          4. Add GOLDENEYE as an isci target using the Proxmox GUI.
+          5. Log into the Proxmox shell.
+          6. Mkdir /mnt/iscsi/GOLDENEYE/
+          7. Mount <iscsi-drive> /mnt/iscsi/GOLDENEYE/
+          8. Add directory storage in Proxmox GUI, use /mnt/iscsi/GOLDENEYE/ for 
+               target.
+          9. Validate backups are available by checking the mounted storage in the
+               Proxmox GUI.
+          10. crontab -e
+          11. @reboot sleep 60 && mount <iscsi-drive> /mnt/iscsi/GOLDENEYE/
+          12. Upload ISO files for VM images (stored on PERFECT-DARK).
+          13. Create Linux Bridge (vmbr1) in the Proxmox GUI, use a different 
+               interface than vmbr0. Check the vm-aware box.
+          14. Reboot RAYMAN.
+          15. Restore vm-101 (neptune).
+          16. Restore any additional VMs.
+          17. Create templates if needed.
+          18. Create new backup schedule for VMs.
+          19. Enable email alerts in the Proxmox shell.
+          
+          Note that it is possible to backup the host configuration of Proxmox,
+          however after attempting it it actually seems faster to just manually
+          restore the configurations. If my Proxmox configurations become very
+          complex i may reconsider; but for now Ill opt to manually restore 
+          configurations.

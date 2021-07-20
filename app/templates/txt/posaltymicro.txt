@@ -1,10 +1,10 @@
 
 Gyokuro LLC                                                      Patrick Coleman
-                                                                 2021/07/17
+                                                                 2021/04/17
 
 Title: SaltyMicro Project Outline
 Author: Patrick Coleman
-Date: July 17th, 2021
+Date: April 17th, 2021
 
 Introduction
      SaltyMicro is a suite of micro-services intended to gather, save, predict 
@@ -265,5 +265,40 @@ Environment
      directly through the SDC API, or once SUI is back online.
                               
 Warnings
+     This project is over a year old at this point. When I began designing this 
+     project, Most of my experience was with Python; I had little experience with 
+     web development and zero experience with containerization. As a result there
+     is undoubtedly many inefficiencies within the SaltyMicro suite. This 
+     project will likely be in development for years. I'm constantly learning, 
+     and as I learn I make adjustments to better optimize existing systems and 
+     add new features. 
 
 Future Development
+     As stated prior, I have many plans for new features:
+     
+     SaltyBot:
+          Earlier, I alluded to a fourth program. This program is intended to 
+          be a automatic betting robot. The SaltyBot will retrieve data from the 
+          SDC to make fight predictions using the ELO ranking system. The SaltyBot
+          will create logs of its predictions and transmit them to the SDC for
+          storage.
+          
+     Email/SMS Alerts:
+          I plan on adding a feature to SBO that notifies me when particular 
+          fighters are about to fight. Since SaltyBet is ramdomized, It can be 
+          difficult to catch a fight between my favorite fighters. Having SBO 
+          monitoring pre-games for particular fighters and alerting me when one 
+          is about to fight would be nice to have.
+          
+     Optimizations:
+          I know my web development skills have improved a lot since I began 
+          writing SUI, as have my knowledge of python libraries. I intend to 
+          go back and review my code and try to condense it as much as possible. 
+          There are also some inefficiencies in how web-content is served. I 
+          plan on optimizing this aswell to reduce the time it takes to load 
+          content in SUI.
+          
+          
+          
+          
+          

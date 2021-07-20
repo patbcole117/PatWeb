@@ -1,8 +1,9 @@
 #linkedin_box {
     align-self: center;
-    margin-top: 5vh;
     display: flex;
     flex-direction: column;
+
+    margin-top: 30vh;
 }
 
 #linkedin_text {

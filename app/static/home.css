@@ -1,15 +1,16 @@
 #center_box {
     align-self: center;
-    border: 1px solid black;
-
-    margin-top: 30vh;
-
     display: flex;
     justify-content: center;
+   
+    margin-top: 40vh;
+    
+    border: 1px solid black;
 }
 
 #text_box {
     text-align: center;
+
     margin-top: 5vh;
     margin-bottom: 5vh;
     margin-left: 25vh;
