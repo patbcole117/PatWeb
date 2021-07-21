@@ -9,13 +9,12 @@ Date: April 17th, 2021
 Introduction
      SaltyMicro is a suite of micro-services intended to gather, save, predict 
      and display data from the popular website https://www.SaltyBet.com. The 
-     suite is intended to be comprised of 4 programs, although only 3 currently 
-     are in development.
-     
+     suite is intended to be comprised of 4 programs, although only 3  are 
+     currently in development.
+
      Until this project, I was used to creating singular monolithic programs. 
-     After reading about Google's Borg system and Netflix's microservice 
-     architecture, I created this project to explore some new design methods and
-     tools. 
+     After reading about containerization and microservice architecture, I 
+     created this project to explore some new design methods and tools.
 
 What is SaltyBet?
      For those of you who don't know (most people), SaltyBet is akin to a 

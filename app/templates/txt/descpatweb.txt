@@ -1,2 +1,3 @@
-This is my personal website. Designed entirely by me; from scratch (excluding some python libraries). It's also completley
-self hosted on an Ubuntu VM provisioned in Proxmox running on my Dell Poweredge R720.
+This is my personal website; designed entirely by me. It's hosted on an
+Ubuntu VM provisioned in my virtual network. Excluding some python libraries
+and using certbot to generate certificates, It's all my own work.

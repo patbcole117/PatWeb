@@ -1,8 +1,6 @@
-Homenet is my home network. When creating Gyokuro LLC, I didn't
+Homenet is my home network. When creating my company, Gyokuro LLC, I didn't
 quite know exactly what I wanted to do or where I would end up. Inorder 
-to facilitate productivity, it was imperative that I design Homenet to be 
-flexible. Networking can be time consuming. When designing Homenet I wanted
-to make sure it embodied a "set it and forget it" archatecture; one that 
-could contract or expand without much effort. This meant I had to take careful
-consideration when designing my IP-Schema and to configure phisical devices
-to utilize automation and virtualization.
+to facilitate productivity, it was imperative to create a flexible network.
+Networking can be time consuming. I wanted to make sure my home network embodied 
+a "set it and forget it" archatecture; one that could contract or expand without 
+much effort.
