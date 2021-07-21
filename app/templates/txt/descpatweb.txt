@@ -1,0 +1,2 @@
+This is my personal website. Designed entirely by me; from scratch (excluding some python libraries). It's also completley
+self hosted on an Ubuntu VM provisioned in Proxmox running on my Dell Poweredge R720.

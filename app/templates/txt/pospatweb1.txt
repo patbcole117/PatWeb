@@ -1,0 +1,32 @@
+
+Gyokuro LLC                                                      Patrick Coleman
+                                                                 2021/07/20
+
+Title: My Website Project Outline
+Author: Patrick Coleman
+Date: July 20th, 2021
+
+Introduction
+     When designing this website, I knew I would have to keep it simple 
+     because I'm not a skilled web developer. In addition, I want it to be 
+     memorable and adhere to my tastes; after all, this is MY personal website.
+
+     I've always been a fan of punk/post-punk/avant-garde aesthetics. I have a few 
+     skateboards; a few pairs of "hideous" custom Vans shoes; my Spotify is full 
+     of punk music; and if I find myself in front of a TV at night, the first channel 
+     ill look for is Adult Swim. 
+
+     In a world of web-developers all one-upping each other to make the most 
+     spectacular, responsive, flashy website possible; I choose to play to my 
+     strengths and go the complete opposite route. 
+     
+     I basically created a strikingly bland RFC-index for all my projects.
+      
+Infrastructure/Network
+     This website is completely self hosted on my own web server. The only expense
+     is the domain name and the electricity. The Ubuntu VM that hosts my server 
+     runs behind a virtual pfSense router (neptune) provisioned on my Dell 
+     Poweredge R720. This means all traffic to my server must be double NATed.
+     
+     
+     Below is a logical diagram of my web hosting setup:

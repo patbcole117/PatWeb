@@ -6,6 +6,10 @@ from flask import render_template
 def home():
     return render_template('home.html', title='home')
 
+@app.route('/about')
+def about():
+    return render_template('about.html', title='about')
+
 @app.route('/notlinkedin')
 def notlinedin():
     sources = []
@@ -61,6 +65,18 @@ def projects():
 
     project_list.append(project_Homenet)
 
+    # Project 3. Patweb
+
+    project_patweb = {'title': 'Patweb', 'links': [], 'desc': ''}
+
+    project_patweb['links'].append({'url': '/pos/patweb', 'title': 'project outline'})
+    project_patweb['links'].append({'url': 'https://github.com/patbcole117/PatWeb', 'title': 'github'})
+
+    f = open('app/templates/txt/descpatweb.txt', 'r')
+    project_patweb['desc'] = f.read()
+
+    project_list.append(project_patweb)
+
     return render_template('projects.html', title='projects', project_list=sorted(project_list, key=lambda proj: proj['title']))
 
 @app.route('/pos/saltymicro')
@@ -70,3 +86,7 @@ def posaltymicro():
 @app.route('/pos/homenet')
 def poshomenet():
     return render_template('/pos/homenet.html', title='homenet outline')
+
+@app.route('/pos/patweb')
+def pospatweb():
+    return render_template('/pos/patweb.html', title='patweb outline')

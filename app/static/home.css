@@ -3,16 +3,18 @@
     display: flex;
     justify-content: center;
    
-    margin-top: 40vh;
+    margin-top: 35vh;
     
     border: 1px solid black;
 }
 
 #text_box {
-    text-align: center;
-
     margin-top: 5vh;
     margin-bottom: 5vh;
     margin-left: 25vh;
     margin-right: 25vh;
+}
+
+#text_box div {
+    text-align: center;
 }

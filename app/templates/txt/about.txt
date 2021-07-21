@@ -1,0 +1,9 @@
+When I decided to make this website I wrote down a few words to focus my 
+design: simple, punk, striking, retro. In other words, I want people to 
+look at my website and think: "This website looks terrible."
+
+I'm not a web developer; I'm better suited as a programmer or network 
+admin. I don't want to be a web-developer, and ill never compete with the
+personal websites designed by professionals (like my sister). What I want
+to do, is simplify complex problems. I love automation, modularity, and 
+--most importantly-- documentation. Essentially, I love saving time.

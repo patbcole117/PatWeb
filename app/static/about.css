@@ -1,0 +1,22 @@
+#center_box {
+    align-self: center;
+    display: flex;
+
+    width: 60%;
+
+    margin-top: 25vh;
+}
+
+
+.center_p {
+    margin-top: 50px;
+
+    text-align: center;
+}
+
+#text_box {
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 30px;
+    font-size: 16px;
+}
