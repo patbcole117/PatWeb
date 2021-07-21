@@ -12,14 +12,14 @@ Disaster Recovery:
           3. Reinstall Proxmox on RAYMAN, check diagrams for networking information.
           4. Add GOLDENEYE as an isci target using the Proxmox GUI.
           5. Log into the Proxmox shell.
-          6. Mkdir /mnt/iscsi/GOLDENEYE/
-          7. Mount <iscsi-drive> /mnt/iscsi/GOLDENEYE/
+          6. mkdir /mnt/iscsi/GOLDENEYE/
+          7. mount *GOLDENEYE-iscsi-drive* /mnt/iscsi/GOLDENEYE/
           8. Add directory storage in Proxmox GUI, use /mnt/iscsi/GOLDENEYE/ for 
                target.
           9. Validate backups are available by checking the mounted storage in the
                Proxmox GUI.
           10. crontab -e
-          11. @reboot sleep 60 && mount <iscsi-drive> /mnt/iscsi/GOLDENEYE/
+          11. @reboot sleep 60 && mount *GOLDENEYE-iscsi-drive* /mnt/iscsi/GOLDENEYE/
           12. Upload ISO files for VM images (stored on PERFECT-DARK).
           13. Create Linux Bridge (vmbr1) in the Proxmox GUI, use a different 
                interface than vmbr0. Check the vm-aware box.
