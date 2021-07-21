@@ -35,21 +35,23 @@ Efficiency
      For example the "projects" page is actually very lean. See below:
 
           ...
-            {% for p in project_list %}
-            <div class="project">
-                <div class="project-title">{{p['title']}}</div>
-                <div class="project-infobox">
-                    <div class="project-links">
-                        {% for l in p['links'] %}
-                            <a href="{{l['url']}}">{{l['title']}}</a>
-                        {% endfor %}
-                    </div>
-                    <div class="project-desc">
-                        <div>{{p['desc']}}</div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
+          <code>
+            <b>&lcub;&percnt; for p in project_list &percnt;&rcub;</b>
+            &lt;div class="project"&gt;
+                &lt;div class="project-title"&gt;<b>&lcub;&lcub;p['title']&rcub;&rcub;</b>&lt;/div&gt;
+                &lt;div class="project-infobox"&gt;
+                    &lt;div class="project-links"&gt;
+                        <b>&lcub;&percnt; for l in p['links'] &percnt;&rcub;</b>
+                            &lt;a href="<b>&lcub;&lcub;l['url']&rcub;&rcub;</b>"&gt;<b>&lcub;&lcub;l['title']&rcub;&rcub;</b>&lt;/a&gt;
+                        <b>&lcub;&percnt; endfor &percnt;&rcub;</b>
+                    &lt;/div&gt;
+                    &lt;div class="project-desc"&gt;
+                        &lt;div&gt;<b>&lcub;&lcub;p['desc']&rcub;&rcub;</b>&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            <b>&lcub;&percnt; endfor &percnt;&rcub;</b>
+          </code>
           ...
 
      As a result of the above code, I will never have to write HTML to add 
