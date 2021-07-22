@@ -21,14 +21,13 @@ Networking
           VLAN-24:                 10.24.0.0/24
           VLAN-32:                 10.32.0.0/24    
           
-          IPs assigned to devices placed into VLANS begin at .16; I want to 
+          IPs assigned to devices placed into VLANS begin at .18; I want to 
           ensure that like-devices are segmented into a potential-VLSM subnet. 
-          Since the pfSense Router (neptune) takes the .1 IP in each subnet, I 
-          do not want to place a Linux-server into the .1 - .15 range. This 
-          allows me, if I so desire, to create a new subnet, VLAN-9 perhaps, at 
-          10.8.0.16/28. the like-devices would run from .16 - .29 and neptune would
-          be placed at 10.8.0.30. This schema allows me to squeeze or expand 
-          networks as I please without having to re-key server IPs.              
+          This configuration allows me, if I so desire, to create a new subnet, 
+          VLAN-816 perhaps, at 10.8.0.16/28. the like-devices would run from 
+          .18 - .30 and neptune would be placed at 10.8.0.16. This schema allows 
+          me to squeeze or expand networks as I please without having to re-key 
+          server IPs.              
           
      VLANS
           VLAN-8 (dev-dmz):
