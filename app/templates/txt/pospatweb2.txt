@@ -15,7 +15,7 @@ Host Configuration
      In addition there is a stand alone docker container for certbot to generate
      SSL/TLS certificates.
      
-     There is also a script to quickly update my server. The script does x 
+     There is also a script to quickly update my server. The script does 4 
      things:
      
      1. Deletes the old patweb files.
