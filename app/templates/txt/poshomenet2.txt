@@ -25,7 +25,7 @@ Networking
           ensure that like-devices are segmented into a potential-VLSM subnet. 
           This configuration allows me, if I so desire, to create a new subnet, 
           VLAN-816 perhaps, at 10.8.0.16/28. the like-devices would run from 
-          .18 - .30 and neptune would be placed at 10.8.0.16. This schema allows 
+          .18 - .30 and neptune would be placed at 10.8.0.17. This schema allows 
           me to squeeze or expand networks as I please without having to re-key 
           server IPs.              
           
