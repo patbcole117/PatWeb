@@ -9,8 +9,8 @@ img {
     align-items: center;
     justify-content: space-evenly;
 
-    height: 95vh;
-    width: 49%;
+    height: 96.8vh;
+    width: 50vw;
 
     background-color: rgb(245,245,245);
     border-left: 1px solid grey;
@@ -24,8 +24,8 @@ img {
 }
 
 #pre-box {
-    height: 95vh;
-    width: 49%;
+    height: 96.8vh;
+    width: 50vw;
     
     cursor: grab;
     overflow: auto;

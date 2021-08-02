@@ -7,6 +7,7 @@
     <title>{{title}}</title>
     <link rel="stylesheet" href="/static/default.css">
     <link rel="stylesheet" href="/static/saltymicro.css">
+    <script type="text/javascript" src="/static/dragscroll.js"></script>
 </head>
 <body>
 
@@ -14,8 +15,8 @@
 
         <div id="top">{% include 'elements/e_top.html' %}</div>
 
-        <div class="pre-box">
-            <pre class=pre_txt>
+        <div id="pre-box" class="dragscroll">
+            <pre>
             {% include 'txt/posaltymicro.txt' %}
             </pre>
         </div>

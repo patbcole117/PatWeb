@@ -19,9 +19,11 @@ a:hover {
 }
 
 #top {
-    width: 100vw;
+    width: 99vw;
 
-    padding: 5px;
+    padding-bottom: .5vh;
+    padding-top: .5vh;
+    padding-left: 1vw;
     background-color: rgb(245, 245, 245);
     border-bottom: 1px solid grey;
 }
