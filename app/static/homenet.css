@@ -1,11 +1,60 @@
 img {
-    max-height: 50%;
-    max-width: 50%;
+    height: 100vh;
+    width: auto;
 }
 
-.pre-box {
+.img-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+
+    height: 95vh;
+    width: 49%;
+
+    background-color: rgb(245,245,245);
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+}
+
+.h-flex {
+    display: flex;
+    flex-direction: row;
+    align-items:flex-start 
+}
+
+#pre-box {
+    height: 95vh;
+    width: 49%;
+    
+    cursor: grab;
+    overflow: auto;
+
+    padding-left: 10px;
+}
+
+#p-box {
+    display: flex;
+    justify-content: start;
+
+    height: auto;
+    width: 100%;
+
+    cursor: grab;
+    overflow: hidden;
+
+    border-bottom: 1px solid grey;
+}
+
+#l-box {
+    display: flex;
+    justify-content: start;
+    
+    height: auto;
+    width: 100%;
+
+    cursor: grab;
+    overflow: hidden;
+
+    border-bottom: 1px solid grey;
 }

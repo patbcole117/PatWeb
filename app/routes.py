@@ -10,6 +10,10 @@ def home():
 def about():
     return render_template('about.html', title='about')
 
+@app.route('/contact')
+def contact():
+    return render_template('contact.html', title='contact')
+
 @app.route('/notlinkedin')
 def notlinedin():
     sources = []
@@ -28,10 +32,6 @@ def notlinedin():
         'citation': '4. Palus, Shannon and Heather Schwedel. “When It Comes to Feeling Bad About Yourself Online, Nothing Compares to LinkedIn.” Slate Magazine, Slate, 5 Apr. 2019,'})
 
     return render_template('notlinkedin.html', title='justkidding', items=sources)
-
-@app.route('/contact')
-def contact():
-    return render_template('contact.html', title='contact')
 
 @app.route('/projects')
 def projects():
@@ -56,7 +56,7 @@ def projects():
 
     # Project 2. Homenet
 
-    project_Homenet = {'title': 'Homenet', 'links': [], 'desc': ''}
+    project_Homenet = {'title': 'Home Network', 'links': [], 'desc': ''}
 
     project_Homenet['links'].append({'url': '/pos/homenet', 'title': 'project outline'})
 
@@ -67,7 +67,7 @@ def projects():
 
     # Project 3. Patweb
 
-    project_patweb = {'title': 'Patweb', 'links': [], 'desc': ''}
+    project_patweb = {'title': 'My Website', 'links': [], 'desc': ''}
 
     project_patweb['links'].append({'url': '/pos/patweb', 'title': 'project outline'})
     project_patweb['links'].append({'url': 'https://github.com/patbcole117/PatWeb', 'title': 'github'})

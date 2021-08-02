@@ -7,28 +7,31 @@
     <title>{{title}}</title>
     <link rel="stylesheet" href="/static/default.css">
     <link rel="stylesheet" href="/static/homenet.css">
+    <script type="text/javascript" src="/static/dragscroll.js"></script>
 </head>
-<body>
+<body id="color-body">
 
     <div class="v-flex">
 
         <div id="top">{% include 'elements/e_top.html' %}</div>
+
+        <div class="h-flex">
         
-        <div class="pre-box">
+            <div id="pre-box" class="dragscroll">
+                <pre class="pre_txt">{% include 'txt/poshomenet.txt' %}</pre>
+            </div>
 
-            <pre class=pre_txt>
-            {% include 'txt/poshomenet1.txt' %}
-            </pre>
-            <img src="/static/img/homenet-physical.png" alt="homenet-physical.png">
+            <div class="img-box">
 
-            <pre class=pre_txt>
-                {% include 'txt/poshomenet2.txt' %}
-            </pre>
-            <img src="/static/img/homenet-logical.png" alt="homenet-logical.png">
+                <div id="p-box" class="dragscroll">
+                    <img src="/static/img/homenet-physical.png" alt="homenet-physical.png">
+                </div>
 
-            <pre class=pre_txt>
-                {% include 'txt/poshomenet3.txt' %}
-            </pre>
+                <div id="l-box" class="dragscroll">
+                    <img src="/static/img/homenet-logical.png" alt="homenet-logical.png">
+                </div>
+
+            </div>
 
         </div>
 

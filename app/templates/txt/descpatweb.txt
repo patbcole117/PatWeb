@@ -1,3 +1,3 @@
-This is my personal website; designed entirely by me. It's hosted on an
-Ubuntu VM provisioned in my virtual network. Excluding some python libraries
-and using certbot to generate certificates, It's all my own work.
+This is my personal website (literally this website your on right now). I started
+this website amidst the COVID pandemic to keep myself sane and buff up my resume. It's
+not particularly impressive, but its completely developed and hosted by me.

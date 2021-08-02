@@ -1,10 +1,6 @@
-.v-flex {
-    display: flex;
-    flex-direction: column;
-
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 16px;
+html, body {
+    margin: 0px;
+    height: 100%;
 }
 
 a:link {
@@ -20,4 +16,21 @@ a:visited {
 a:hover {
     color: aqua;
     text-decoration: none;
+}
+
+#top {
+    width: 100vw;
+
+    padding: 5px;
+    background-color: rgb(245, 245, 245);
+    border-bottom: 1px solid grey;
+}
+
+.v-flex {
+    display: flex;
+    flex-direction: column;
+
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
 }
