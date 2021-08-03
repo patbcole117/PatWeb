@@ -1,0 +1,118 @@
+
+Gyokuro LLC                                           Patrick Coleman 2021/07/20
+
+Title: My Website Project Outline 
+Author: Patrick Coleman 
+Created: July 20th, 2021
+Updated  August 3rd, 2021
+
+<b style="color: white">Introduction</b>
+     This  is the  project  outline for my personal  website. It's  likely  that 
+     whomever is reading this is on my website right now.
+
+     When designing this website I knew I would have to play to my strengths, or
+     lack thereof.  I am  not a web  developer, and so  I endorsed  a minimalist
+     approach with a bit of retro-punk aesthetic sprinkled in.
+
+
+<b style="color: white">Infrastructure/Network</b>
+     This website  is completely self hosted  on my own
+     web server. The only recurring expense is the domain name  and electricity.
+     My web server and its associated NGINX reverse  proxy, which I use  for TLS 
+     certs, are both  containerized  with  Docker and running on an Ubuntu Linux 
+     VM. For a more detailed view  of where my web server fits in my network see
+     my Home Network project.
+
+     Below is a logical diagram of my web hosting setup:
+
+           <img src="/static/img/patweb-phys.png" alt="patweb-phys.png" style="display:block;margin-left:auto;margin-right:auto;width:35%;">
+
+<b style="color: white">Host Configuration</b> 
+     On the  Ubuntu server is a docker-compose  file to spool  up two containers
+     on their own docker-network.
+
+          NGINX 
+               NGINX acts as a reverse proxy to decouple SSL/TLS management from
+               my python  application. It  also  allows  me  to potentially  add 
+               multiple servers behind one port if I later choose to do so.
+
+          patweb 
+               patweb  is the  name of  my website  container. It  uses Python's
+               Flask framework and Gunicorn to serve my web content.
+
+     In addition there is a stand alone docker container for certbot to generate
+     and renew SSL/TLS certificates.
+
+     There is  also a  script to  quickly update  my server.  The script  does 4
+     things:
+
+          1. Deletes the old patweb files.
+          2. Clones the git repo for patweb.
+          3. Remakes the docker image.
+          4. Restarts the web server container.
+
+     This allows me to  make changes to the website and  deploy them in seconds.
+     Containers are truly amazing!
+
+<b style="color: white">Efficiency</b> 
+     During  the creation of this website, I  tried to use  as few lines of code
+     as  possible. If  there are  blocks in  different  HTML files that need the 
+     same styling, they  import  the  same  CSS; If something is repeated, loops 
+     are used to generate the HTML.
+
+     For example the "projects" page is actually very lean. See below:
+          <p style="color: white">
+          ...
+          <code>
+          <b>&lcub;&percnt; for p in project_list &percnt;&rcub;</b>
+          &lt;div class="project"&gt;
+               &lt;div class="project-desc"&gt;
+                    &lt;div class="project-title"&gt;&lt;p&gt;<b>&lcub;&lcub;p.title&rcub;&rcub;</b>&lt;/p&gt;&lt;/div&gt;
+                    &lt;div&gt;<b>&lcub;&lcub;p.desc&rcub;&rcub;</b>&lt;/div&gt;
+               &lt;/div&gt;
+               &lt;div class="project-links"&gt;
+                    <b>&lcub;&percnt; for l in p.links &percnt;&rcub;</b>
+                         &lt;a href="<b>&lcub;&lcub;l.url&rcub;&rcub;</b>" 
+                         onMouseOver="this.style.color='<b>&lcub;&lcub;l.color&rcub;&rcub;</b>'" 
+                         onMouseOut="this.style.color='rgb(200, 200, 200)'"&gt;<b>
+                         &lcub;&lcub;l.alias&rcub;&rcub;</b>&lt;/a&gt;
+                    <b>&lcub;&percnt; endfor &percnt;&rcub;</b>
+               &lt;/div&gt;
+          &lt;/div&gt;
+          <b>&lcub;&percnt; endfor &percnt;&rcub;</b>
+          </code>
+          ...
+          </p>
+     As a  result of  the above code,  I will  never have to  write HTML  to add
+     projects to the project page. Instead I  create a json object for a project
+     and jinja  will create  the HTML  necessary to place  the project  onto the
+     page.
+
+     I have defined a project object (Projobj) in python to look like this:
+          <p style="color: white">
+          class Projobj:
+               def __init__(self, title, desc_file):
+                    self.title = title
+                    self.desc = self.set_desc(desc_file)
+                    self.links = []
+          </p>
+     And the code to append a new project to my website looks like this:
+          <p style="color: white">
+          # 1. Create a Projobj, supplying a title and description path.
+          patweb = Projobj('My Website', 'app/templates/txt/descpatweb.txt')
+
+          # 2. Add any associated links related to the project.
+          patweb.push_link(Funlink('/pos/patweb', 'project-outline', 50))
+          patweb.push_link(Funlink('https://github.com/patbcole117/PatWeb', \
+          'patweb.git', 50))
+
+          # 3. Append the project to the list and let Jinja handle the rest.
+          project_list.append(patweb)
+          </p>
+     If I want to add a new project, all  I have to do is write a little python.
+     All the CSS and HTML are handled automatically                            .
+
+<b style="color: white">Future Development</b> 
+     I plan on adding some eastereggs to my website. There might already be some 
+     hidden around...
+
