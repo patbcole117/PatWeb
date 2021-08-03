@@ -5,11 +5,16 @@
     margin-top: 5vh;
 }
 
-.project-title {
+.project-desc {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 
-    font-size: 18px;
+    height: 10vh;
+    width: 80%;
+    padding: 2vh;
+
+    border: 1px solid black;
 }
 
 .project-infobox {
@@ -30,14 +35,9 @@
     border: 1px solid black;
 }
 
-.project-desc {
+.project-title {
     display: flex;
-    flex-direction: column;
     justify-content: center;
 
-    height: 10vh;
-    width: 80%;
-    padding: 2vh;
-
-    border: 1px solid black;
+    font-size: 18px;
 }

@@ -3,6 +3,13 @@ img {
     width: auto;
 }
 
+
+.h-flex {
+    display: flex;
+    flex-direction: row;
+    align-items:flex-start 
+}
+
 .img-box {
     display: flex;
     flex-direction: column;
@@ -17,26 +24,22 @@ img {
     border-right: 1px solid grey;
 }
 
-.h-flex {
-    display: flex;
-    flex-direction: row;
-    align-items:flex-start 
-}
-
 #pre-box {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    
     height: 96.8vh;
     width: 50vw;
     
     cursor: grab;
     overflow: auto;
-
-    padding-left: 10px;
 }
 
-#p-box {
+#l-box {
     display: flex;
     justify-content: start;
-
+    
     height: auto;
     width: 100%;
 
@@ -46,10 +49,10 @@ img {
     border-bottom: 1px solid grey;
 }
 
-#l-box {
+#p-box {
     display: flex;
     justify-content: start;
-    
+
     height: auto;
     width: 100%;
 

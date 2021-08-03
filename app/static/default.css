@@ -18,16 +18,6 @@ a:hover {
     text-decoration: none;
 }
 
-#top {
-    width: 99vw;
-
-    padding-bottom: .5vh;
-    padding-top: .5vh;
-    padding-left: 1vw;
-    background-color: rgb(245, 245, 245);
-    border-bottom: 1px solid grey;
-}
-
 .v-flex {
     display: flex;
     flex-direction: column;
@@ -35,4 +25,40 @@ a:hover {
     color: black;
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
+}
+
+#home:hover {
+    color: rgb(100, 255, 100);
+    text-decoration: none;
+}
+
+#about:hover {
+    color: rgb(100, 255, 255);
+    text-decoration: none;
+}
+
+#projects:hover {
+    color: rgb(255, 100, 100);
+    text-decoration: none;
+}
+
+#notlinkedin:hover {
+    color: rgb(255, 100, 255);
+    text-decoration: none;
+}
+
+#contact:hover {
+    color: rgb(255, 255, 100);
+    text-decoration: none;
+}
+
+
+#top {
+    width: 99.5vw;
+
+    padding-bottom: .5vh;
+    padding-top: .5vh;
+    padding-left: .5vw;
+    background-color: rgb(150, 150, 150);
+    border-bottom: 1px solid black;
 }

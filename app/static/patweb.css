@@ -3,6 +3,10 @@ img {
     max-height: 50%;
 }
 
+.pre_text {
+    max-width: 10vw;
+ }
+
 #pre-box {
     display: flex;
     flex-direction: column;
@@ -14,8 +18,4 @@ img {
     
     cursor: grab;
     overflow: auto;
-}
-
-.pre_text {
-   max-width: 10vw;
 }
