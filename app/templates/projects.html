@@ -18,18 +18,17 @@
 
             <div class="project">
 
-                <div class="project-title">{{p['title']}}</div>
-
                 <div class="project-infobox">
+
+                    <div class="project-desc">
+                        <div class="project-title"><p>{{p['title']}}</p></div>
+                        <div>{{p['desc']}}</div>
+                    </div>
 
                     <div class="project-links">
                         {% for l in p['links'] %}
                             <a href="{{l['url']}}">{{l['title']}}</a>
                         {% endfor %}
-                    </div>
-
-                    <div class="project-desc">
-                        <div>{{p['desc']}}</div>
                     </div>
 
                 </div>

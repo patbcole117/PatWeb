@@ -10,29 +10,30 @@
     flex-direction: column;
     justify-content: center;
 
-    height: 10vh;
-    width: 80%;
-    padding: 2vh;
+    height: auto;
+    width: 100%;
 
-    border: 1px solid black;
+    /*border: 1px solid rgb(200, 200, 200);*/
 }
 
 .project-infobox {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    align-content: center;
+    align-self: center;
+
+    max-width: 40%;
 }
 
 .project-links {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-evenly;
 
     height: auto;
-    width: 10%;
-    padding: 2vh;
+    width: 100%;
 
-    border: 1px solid black;
+    border: 1px solid rgb(200, 200, 200);
 }
 
 .project-title {

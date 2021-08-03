@@ -43,10 +43,10 @@ def projects():
 
     project_SaltyMicro = {'title': 'SaltyMicro', 'links': [], 'desc': ''}
 
-    project_SaltyMicro['links'].append({'url': '/pos/saltymicro', 'title': 'project outline'})
-    project_SaltyMicro['links'].append({'url': 'https://github.com/patbcole117/SBOv2', 'title': 'github - sbo'})
-    project_SaltyMicro['links'].append({'url': 'https://github.com/patbcole117/SDCv2', 'title': 'github - sdc'})
-    project_SaltyMicro['links'].append({'url': 'https://github.com/patbcole117/SUIv2', 'title': 'github - sui'})
+    project_SaltyMicro['links'].append({'url': '/pos/saltymicro', 'title': 'project-outline'})
+    project_SaltyMicro['links'].append({'url': 'https://github.com/patbcole117/SBOv2', 'title': 'sbo.git'})
+    project_SaltyMicro['links'].append({'url': 'https://github.com/patbcole117/SDCv2', 'title': 'sdc.git'})
+    project_SaltyMicro['links'].append({'url': 'https://github.com/patbcole117/SUIv2', 'title': 'sui.git'})
     project_SaltyMicro['links'].append({'url': 'https://saltymicro.gyokuro.info/', 'title': 'website'})
 
     f = open('app/templates/txt/descsaltymicro.txt', 'r')
@@ -58,7 +58,7 @@ def projects():
 
     project_Homenet = {'title': 'Home Network', 'links': [], 'desc': ''}
 
-    project_Homenet['links'].append({'url': '/pos/homenet', 'title': 'project outline'})
+    project_Homenet['links'].append({'url': '/pos/homenet', 'title': 'project-outline'})
 
     f = open('app/templates/txt/deschomenet.txt', 'r')
     project_Homenet['desc'] = f.read()
@@ -69,8 +69,8 @@ def projects():
 
     project_patweb = {'title': 'My Website', 'links': [], 'desc': ''}
 
-    project_patweb['links'].append({'url': '/pos/patweb', 'title': 'project outline'})
-    project_patweb['links'].append({'url': 'https://github.com/patbcole117/PatWeb', 'title': 'github'})
+    project_patweb['links'].append({'url': '/pos/patweb', 'title': 'project-outline'})
+    project_patweb['links'].append({'url': 'https://github.com/patbcole117/PatWeb', 'title': 'patweb.git'})
 
     f = open('app/templates/txt/descpatweb.txt', 'r')
     project_patweb['desc'] = f.read()
