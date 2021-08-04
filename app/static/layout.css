@@ -61,8 +61,7 @@ a:hover
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    height: 100%;
+    height: 97vh;
 }
 
 /* ############################## */
@@ -113,9 +112,6 @@ a:hover
     text-justify: inter-word;
 }
 
-
-
-
 /* ############################## */
 /* ######### PROJ.HTML ########## */
 /* ############################## */
@@ -124,6 +120,9 @@ a:hover
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
 }
 
 #project-info
@@ -135,7 +134,7 @@ a:hover
     height: auto;
     width: 40%;
 
-    margin-top: 5vh;
+    text-align: justify;
     text-justify: inter-word;
 }
 
@@ -170,13 +169,14 @@ a:hover
 {
     display: flex;
     flex-direction: column;
+    max-width: 75%;
 }
 
 #notlinkedin-title
 {
     align-self: center;
 
-    margin-bottom: 15vh;
+    margin-bottom: 10vh;
 }
 
 /* ############################## */
