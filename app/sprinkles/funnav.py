@@ -1,6 +1,6 @@
 from app.sprinkles.funlink import Funlink
 
-class Nav():
+class Funnav():
     def __init__(self):
         self.fl_list= self.make_links()
         self.bar_color = self.make_bar(0, 100)

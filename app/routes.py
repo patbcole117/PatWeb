@@ -3,21 +3,21 @@ from flask import render_template
 
 from app.sprinkles.funlink import Funlink
 from app.sprinkles.projobj import Projobj
-from app.sprinkles.nav import Nav
+from app.sprinkles.funnav import Funnav
 
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html', title='home', nav=Nav())
+    return render_template('home.html', title='home', nav=Funnav())
 
 @app.route('/about')
 def about():
-    return render_template('about.html', title='about', nav=Nav())
+    return render_template('about.html', title='about', nav=Funnav())
 
 @app.route('/contact')
 def contact():
     f1 = Funlink('mailto:pcolemanofficial@gmail.com', 'pcolemanofficial@gmail.com', 100)
-    return render_template('contact.html', title='contact', fl=f1, nav=Nav())
+    return render_template('contact.html', title='contact', fl=f1, nav=Funnav())
 
 @app.route('/notlinkedin')
 def notlinedin():
@@ -35,7 +35,7 @@ def notlinedin():
 
     fl_list = [f1, f2, f3, f4]
 
-    return render_template('notlinkedin.html', title='notlinkedin', fl_list=fl_list, nav=Nav())
+    return render_template('notlinkedin.html', title='notlinkedin', fl_list=fl_list, nav=Funnav())
 
 @app.route('/projects')
 def projects():
@@ -61,16 +61,16 @@ def projects():
     patweb.push_link(Funlink('/pos/patweb', 'project-outline', 50))
     patweb.push_link(Funlink('https://github.com/patbcole117/PatWeb', 'patweb.git', 50))
     pj_list.append(patweb)
-    return render_template('projects.html', title='projects', pj_list=sorted(pj_list, key=lambda p: p.title), nav=Nav())
+    return render_template('projects.html', title='projects', pj_list=sorted(pj_list, key=lambda p: p.title), nav=Funnav())
 
 @app.route('/pos/saltymicro')
 def posaltymicro():
-    return render_template('/pos/saltymicro.html', title='saltymicro outline', nav=Nav())
+    return render_template('/pos/saltymicro.html', title='saltymicro outline', nav=Funnav())
 
 @app.route('/pos/homenet')
 def poshomenet():
-    return render_template('/pos/homenet.html', title='homenet outline', nav=Nav())
+    return render_template('/pos/homenet.html', title='homenet outline', nav=Funnav())
 
 @app.route('/pos/patweb')
 def pospatweb():
-    return render_template('/pos/patweb.html', title='patweb outline', nav=Nav())
+    return render_template('/pos/patweb.html', title='patweb outline', nav=Funnav())
