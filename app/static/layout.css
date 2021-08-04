@@ -93,6 +93,7 @@ a:hover
     height: 15vh;
 
     border: 1px solid white;
+    text-align: center;
 }
 
 /* ############################## */
@@ -135,6 +136,7 @@ a:hover
     width: 40%;
 
     margin-top: 5vh;
+    text-justify: inter-word;
 }
 
 #project-links
@@ -144,9 +146,15 @@ a:hover
     justify-content: space-evenly;
 
     height: auto;
-    width: 40%;
+    min-width: 40%;
 
     border: 1px solid white;
+}
+
+#project-links a
+{
+    margin-left: 2vw;
+    margin-right: 2vw;
 }
 
 #project-title
