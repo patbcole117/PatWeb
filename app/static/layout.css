@@ -133,6 +133,10 @@ a:hover
 {
     width: 50vw;
     height: auto;
+
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 20px;
 }
 
 /* ############################## */
@@ -167,6 +171,12 @@ a:hover
     width: 40%;
 
     border: 1px solid white;
+}
+
+#project-title
+{
+    font-size: 18px;
+    color: white;
 }
 
 /* ############################## */
