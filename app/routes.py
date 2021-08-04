@@ -3,19 +3,20 @@ from flask import render_template
 
 from app.sprinkles.funlink import Funlink
 from app.sprinkles.projobj import Projobj
+from app.sprinkles.nav import Nav
 
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html', title='home')
+    return render_template('home.html', title='home', nav=Nav())
 
 @app.route('/about')
 def about():
-    return render_template('about.html', title='about')
+    return render_template('about.html', title='about', nav=Nav())
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html', title='contact')
+    return render_template('contact.html', title='contact', nav=Nav())
 
 @app.route('/notlinkedin')
 def notlinedin():
@@ -31,14 +32,14 @@ def notlinedin():
     f4 = Funlink('https://slate.com/technology/2019/04/linkedin-stalking-self-loathing-social-media-envy.html', '4. Palus, Shannon and Heather Schwedel. \
         “When It Comes to Feeling Bad About Yourself Online, Nothing Compares to LinkedIn.” Slate Magazine, Slate, 5 Apr. 2019,', 50)
 
-    sources = [f1, f2, f3, f4]
+    fl_list = [f1, f2, f3, f4]
 
-    return render_template('notlinkedin.html', title='notlinkedin', items=sources)
+    return render_template('notlinkedin.html', title='notlinkedin', fl_list=fl_list, nav=Nav())
 
 @app.route('/projects')
 def projects():
 
-    project_list = []
+    pj_list = []
 
     # Project 1. SaltyMicro
     saltyMicro = Projobj('SaltyMicro', 'app/templates/txt/descsaltymicro.txt')
@@ -47,28 +48,28 @@ def projects():
     saltyMicro.push_link(Funlink('https://github.com/patbcole117/SDCv2', 'sdc.git', 50))
     saltyMicro.push_link(Funlink('https://github.com/patbcole117/SUIv2', 'sui.git', 50))
     saltyMicro.push_link(Funlink('https://saltymicro.gyokuro.info/', 'website', 50))
-    project_list.append(saltyMicro)
+    pj_list.append(saltyMicro)
 
     # Project 2. Home Network
     homenet = Projobj('Home Network', 'app/templates/txt/deschomenet.txt')
     homenet.push_link(Funlink('/pos/homenet', 'project-outline', 50))
-    project_list.append(homenet)
+    pj_list.append(homenet)
 
     # Project 3. My Website
     patweb = Projobj('My Website', 'app/templates/txt/descpatweb.txt')
     patweb.push_link(Funlink('/pos/patweb', 'project-outline', 50))
     patweb.push_link(Funlink('https://github.com/patbcole117/PatWeb', 'patweb.git', 50))
-    project_list.append(patweb)
-    return render_template('projects.html', title='projects', project_list=sorted(project_list, key=lambda p: p.title))
+    pj_list.append(patweb)
+    return render_template('projects.html', title='projects', pj_list=sorted(pj_list, key=lambda p: p.title), nav=Nav())
 
 @app.route('/pos/saltymicro')
 def posaltymicro():
-    return render_template('/pos/saltymicro.html', title='saltymicro outline')
+    return render_template('/pos/saltymicro.html', title='saltymicro outline', nav=Nav())
 
 @app.route('/pos/homenet')
 def poshomenet():
-    return render_template('/pos/homenet.html', title='homenet outline')
+    return render_template('/pos/homenet.html', title='homenet outline', nav=Nav())
 
 @app.route('/pos/patweb')
 def pospatweb():
-    return render_template('/pos/patweb.html', title='patweb outline')
+    return render_template('/pos/patweb.html', title='patweb outline', nav=Nav())

@@ -71,11 +71,11 @@ Updated  August 3rd, 2021
                     &lt;div&gt;<b>&lcub;&lcub;p.desc&rcub;&rcub;</b>&lt;/div&gt;
                &lt;/div&gt;
                &lt;div class="project-links"&gt;
-                    <b>&lcub;&percnt; for l in p.links &percnt;&rcub;</b>
-                         &lt;a href="<b>&lcub;&lcub;l.url&rcub;&rcub;</b>" 
-                         onMouseOver="this.style.color='<b>&lcub;&lcub;l.color&rcub;&rcub;</b>'" 
-                         onMouseOut="this.style.color='rgb(200, 200, 200)'"&gt;<b>
-                         &lcub;&lcub;l.alias&rcub;&rcub;</b>&lt;/a&gt;
+                    <b>&lcub;&percnt; for fl in p.links &percnt;&rcub;</b>
+                         &lt;a href="<b>&lcub;&lcub;fl.url&rcub;&rcub;</b>" 
+                         onMouseOver="this.style.color='<b>&lcub;&lcub;fl.color&rcub;&rcub;</b>'" 
+                         onMouseOut="this.style.color='&lcub;&lcub;fl.d_color&rcub;&rcub;'"&gt;<b>
+                         &lcub;&lcub;fl.alias&rcub;&rcub;</b>&lt;/a&gt;
                     <b>&lcub;&percnt; endfor &percnt;&rcub;</b>
                &lt;/div&gt;
           &lt;/div&gt;

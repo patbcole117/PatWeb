@@ -8,8 +8,8 @@
             I do not to have a LinkedIn account.
         </div>
         <div id="notlinkedin-links">
-            {% for i in items %}
-            <p><a href="{{ i.url }}" onMouseOver="this.style.color='{{i.color}}'" onMouseOut="this.style.color='rgb(200, 200, 200)'" target="_blank">{{ i.alias }}</a></p>
+            {% for fl in fl_list %}
+            <p><a href="{{ fl.url }}" onMouseOver="this.style.color='{{fl.color}}'" onMouseOut="this.style.color='{{fl.d_color}}'" target="_blank">{{ fl.alias }}</a></p>
             {% endfor %}
         </div>
     </div>

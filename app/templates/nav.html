@@ -1,7 +1,17 @@
+<style type="text/css">
+#nav
+{
+    background-color: {{nav.bar_color}};
+    border-color: {{nav.border_color}};
+}
+</style>
+
 <div id="nav">
-    <a class="navlink" id="home" href="/home" >home</a>
-    <a class="navlink" id="about" href="/about">about</a>
-    <a class="navlink" id="projects" href="/projects">projects</a>
-    <a class="navlink" id="notlinkedin" href="/notlinkedin">linkedin</a>
-    <a class="navlink" id="contact" href="/contact">contact</a>
+    {% for fl in nav.fl_list %}
+    <a class="navlink" 
+    id="{{fl.alias}}" 
+    href="{{ fl.url }}" 
+    onMouseOver="this.style.color='{{fl.color}}'" 
+    onMouseOut="this.style.color='{{fl.d_color}}'">{{ fl.alias }}</a>
+    {% endfor %}
 </div>
