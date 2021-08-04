@@ -131,13 +131,20 @@ a:hover
 /* ############################## */
 #about-cbox
 {
-    width: 50vw;
+    width: 40vw;
     height: auto;
 
-    text-align: justify;
-    text-justify: inter-word;
     font-size: 20px;
 }
+
+#about-justify
+{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+
+
 
 /* ############################## */
 /* ######### PROJ.HTML ########## */
