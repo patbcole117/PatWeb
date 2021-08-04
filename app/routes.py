@@ -16,7 +16,8 @@ def about():
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html', title='contact', nav=Nav())
+    f1 = Funlink('mailto:pcolemanofficial@gmail.com', 'pcolemanofficial@gmail.com', 100)
+    return render_template('contact.html', title='contact', fl=f1, nav=Nav())
 
 @app.route('/notlinkedin')
 def notlinedin():
