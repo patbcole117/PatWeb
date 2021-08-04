@@ -1,31 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
-    <link rel="stylesheet" href="/static/default.css">
-    <link rel="stylesheet" href="/static/projects.css">
-</head>
-<body>
-    <div class="v-flex">
-        <div id="top">{% include 'elements/e_top.html' %}</div>
+{% extends 'layout.html' %}
 
-        {% for p in project_list %}
-        <div class="project">
-            <div class="project-desc">
-                <div class="project-title"><p>{{p.title}}</p></div>
+{% block content %}
+
+    {% for p in project_list %}
+        <div id="project-box">
+            <div id="project-info">
+                <div id="project-title"><p>{{p.title}}</p></div>
                 <div>{{p.desc}}</div>
             </div>
-            <div class="project-links">
+            <div id="project-links">
                 {% for l in p.links %}
                     <a href="{{l.url}}" onMouseOver="this.style.color='{{l.color}}'" onMouseOut="this.style.color='rgb(200, 200, 200)'">{{l.alias}}</a>
                 {% endfor %}
             </div>
         </div>
-        {% endfor %}
+    {% endfor %}
 
-    </div>
-</body>
-</html>
+{% endblock %}

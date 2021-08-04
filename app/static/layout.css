@@ -1,0 +1,240 @@
+/* ############################## */
+/* ########## DEFAULTS ########## */
+/* ############################## */
+html, body 
+{
+    margin: 0px;
+    height: 100%;
+
+    background-color: rgb(10, 30, 30);
+
+    color: rgb(200, 200, 200);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
+
+a:link, a:visited 
+{
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+}
+
+a:hover 
+{
+    color: aqua;
+    text-decoration: none;
+}
+
+#box 
+{
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+    width: 100vw;
+}
+
+.cbox 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dragscroll 
+{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    height: 97vh;
+    width: 100%;
+
+    cursor: grab;
+    overflow: auto;
+}
+
+.vbox 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+}
+
+/* ############################## */
+/* ########## NAV.HTML ########## */
+/* ############################## */
+#nav 
+{
+    display: flex;
+    align-items: center;
+
+    height: 3vh;
+    width: 100vw;
+
+    background-color: rgb(55, 60, 65);
+    border-bottom: 1px solid rgb(95, 80, 55);
+}
+
+#home:hover 
+{
+    color: rgb(100, 255, 100);
+    text-decoration: none;
+}
+
+#about:hover 
+{
+    color: rgb(100, 255, 255);
+    text-decoration: none;
+}
+
+#projects:hover 
+{
+    color: rgb(255, 100, 100);
+    text-decoration: none;
+}
+
+#notlinkedin:hover 
+{
+    color: rgb(255, 100, 255);
+    text-decoration: none;
+}
+
+#contact:hover 
+{
+    color: rgb(255, 255, 100);
+    text-decoration: none;
+}
+
+.navlink 
+{
+    margin-left: 1vw;
+}
+
+/* ############################## */
+/* ######### HOME.HTML ########## */
+/* ############################## */
+#home-cbox
+{
+    width: 40vw;
+    height: 15vh;
+
+    border: 1px solid white;
+}
+
+/* ############################## */
+/* ######### ABOUT.HTML ######### */
+/* ############################## */
+#about-cbox
+{
+    width: 50vw;
+    height: auto;
+}
+
+/* ############################## */
+/* ######### PROJ.HTML ########## */
+/* ############################## */
+#project-box
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#project-info
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: auto;
+    width: 40%;
+
+    margin-top: 5vh;
+}
+
+#project-links
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    height: auto;
+    width: 40%;
+
+    border: 1px solid white;
+}
+
+/* ############################## */
+/* ######### LNKN.HTML ########## */
+/* ############################## */
+#notlinkedin-box
+{
+    display: flex;
+    flex-direction: column;
+}
+
+#notlinkedin-title
+{
+    align-self: center;
+
+    margin-bottom: 15vh;
+}
+
+/* ############################## */
+/* ########## HMNT.HTML ######### */
+/* ############################## */
+#homenet-box
+{
+    display: flex;
+    flex-direction: row;
+
+    height: auto;
+    width: 100%;
+}
+
+#homenet-imgbox
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    height: 97vh;
+    width: 50vw;
+
+    background-color: rgb(245,245,245);
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+}
+
+#homenet-imgbox .dragscroll
+{
+    justify-content: start;
+
+    height: auto;
+
+    overflow: hidden;
+
+    border-bottom: 1px solid grey;
+}
+
+.homenet-img {
+    height: 100vh;
+    width: auto;
+}
+
+/* ############################## */
+/* ######### PTWB.HTML ########## */
+/* ############################## */
+#patweb-img
+{
+    transform: scale(2);
+
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}

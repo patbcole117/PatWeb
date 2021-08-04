@@ -52,12 +52,12 @@ Updated: August 2nd, 2021
      The  physical section of  the  network is  sandwiched  between two  gateway
      devices: Venus, my Netgear R6230  Router; and  Neptune, a  virtual  pfSense
      firewall/router.  Venus  controls  traffic  coming  into  and  out  of  the
-     internet. Neptune controls traffic entering and exiting the virtual network.
+     internet. Neptune controls traffic entering and exiting the virtual network
      Together, neptune  and venus  keep my  physical  environment protected from
      malicious or misconfigured traffic.
 
       IP-Schema 
-           I have  put  a  lot of  thought  into  the  IP-Schema  of Homenet. To 
+           I have  put  a  lot of  thought  into  the  IP-Schema  of Homenet. To
            facilitate a  "set it and forget it" architecture I have incorporated
            a few design axioms:
 
@@ -120,7 +120,7 @@ Updated: August 2nd, 2021
           4. Add GOLDENEYE as NFS storage using the Proxmox  GUI. 
           5. Upload ISOs to Proxmox. 
           6. Create a new Linux bridge  (vmbr1) in  Proxmox. Be sure to  use a
-             different interface than vmbr0 and to check the "vlan-aware" box.  
+             different interface than vmbr0 and to check the "vlan-aware" box. 
           7. Reboot  RAYMAN.
           8. Restore vm-100 (neptune) from NFS backup storage.
           9. Import pfSense-configuration.xml to neptune.

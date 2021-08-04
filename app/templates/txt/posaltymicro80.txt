@@ -3,7 +3,7 @@ Gyokuro LLC                                           Patrick Coleman 2021/04/17
 
 Title: SaltyMicro Project Outline 
 Author: Patrick Coleman 
-Created: April 17th, 2021
+Created: December 16th, 2020
 Updated: August 3rd, 2021
 
 <b style="color: white">Introduction</b>  
@@ -21,7 +21,7 @@ Updated: August 3rd, 2021
      For those unaware  (most people), SaltyBet is  akin to a virtual version of
      The Ultimate Fighting Championship. At www.SaltyBet.com is a live stream of
      virtual, AI-controlled, fan-made  characters duking  it out 24/7. Thousands
-     of spectators tune in daily  to  watch  fights and bet fake-money (known as 
+     of spectators tune in daily  to  watch  fights and bet fake-money (known as
      "salt")  on their  favorite characters. There  are thousands of characters;
      from Darth Vader to Ronald McDonald, you never know who will be victorious.
 
@@ -241,7 +241,7 @@ Updated: August 3rd, 2021
      |                               v        V       V       V       V   |
      +--------------------------------------------------------------------+
 
-################################################################################                  
+################################################################################
 </p>
 
      None  of the  programs require  the  others to  run. They  simply wait  for
@@ -289,5 +289,3 @@ Updated: August 3rd, 2021
      back and review my  code and try to condense it as  much as possible. There
      are  also some  inefficiencies  in how  web-content is  served.  I plan  on
      optimizing this aswell to reduce the time it takes to load content in SUI.
-
-

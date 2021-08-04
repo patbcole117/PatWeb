@@ -1,27 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>linkedin</title>
-    <link rel="stylesheet" href="/static/default.css">
-    <link rel="stylesheet" href="/static/notlinkedin.css">
-</head>
-<body>
-    <div class="v-flex">
-        <div id="top">{% include 'elements/e_top.html' %}</div>
-        <div id="linkedin_box">
-            <div id="linkedin_text">
-                I do not to have a LinkedIn account.
-            </div>
-            <div id="source_text">
-                {% for i in items %}
-                <p><a href="{{ i.url }}" onMouseOver="this.style.color='{{i.color}}'" onMouseOut="this.style.color='rgb(200, 200, 200)'" target="_blank">{{ i.alias }}</a></p>
-                {% endfor %}
-            </div>
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="vbox">
+<div class="cbox">
+    <div id="notlinkedin-box">
+        <div id="notlinkedin-title">
+            I do not to have a LinkedIn account.
         </div>
+        <div id="notlinkedin-links">
+            {% for i in items %}
+            <p><a href="{{ i.url }}" onMouseOver="this.style.color='{{i.color}}'" onMouseOut="this.style.color='rgb(200, 200, 200)'" target="_blank">{{ i.alias }}</a></p>
+            {% endfor %}
         </div>
     </div>
-</body>
-</html>
+</div>
+</div>
+{% endblock %}
