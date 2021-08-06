@@ -69,10 +69,11 @@ Updated: August 2nd, 2021
 
           Adhering to the first and second axioms, I designed following schema:
 
-          LAN (physical network):  192.168.0.0/24
+          LAN (physical network):  192.168.117.0/24
           VLAN-4:                  10.4.0.0/24
           VLAN-8:                  10.8.0.0/24
           VLAN-16:                 10.16.0.0/24
+          VLAN-20:                 10.20.0.0/24
           VLAN-24:                 10.24.0.0/24
           VLAN-32:                 10.32.0.0/24
 
@@ -86,8 +87,8 @@ Updated: August 2nd, 2021
       VLANS 
           VLAN-4 (net-services):  
                VLAN-4 is for network services. Presently it only  contains a DNS
-               server. In  the future  I wish  to add RADIUS,  a dedicated DHCP,
-               and a syslog server.
+               and DHCP server. In the future I plan to add a RADIUS and  syslog
+               server.
 
           VLAN-8 (dev-dmz):
                VLAN-8 is  the development  DMZ. This  VLAN  is available to host
@@ -96,11 +97,16 @@ Updated: August 2nd, 2021
           VLAN-16 (dev-internal):
                VLAN-16 is the development internal network. This VLAN is for VMs
                that should  not be accessible from the WAN but are accessible by
-               VLAN-8
+               VLAN-8.
+               
+          VLAN-20 (fun)
+               VLAN-20 is for servers that serve a putpose other  than  utility.
+               If I were to have a Minecraft server it would go here.  
 
           VLAN-24 (prod-dmz):
                VLAN-24 is  the production DMZ. This  VLAN hosts servers that are
-               accessible from the outside network.
+               accessible from the outside network and intended to be kept  in a
+               stable state. 
 
           VLAN-32 (prod-internal):
                VLAN-32 is the production  internal network. This  VLAN hosts VMs
