@@ -1,5 +1,5 @@
 
-Gyokuro LLC                                           Patrick Coleman 2021/04/17
+Gyokuro LLC                                           Patrick Coleman 2021/12/16
 
 Title: SaltyMicro Project Outline 
 Author: Patrick Coleman 
@@ -8,7 +8,7 @@ Updated: August 3rd, 2021
 
 <b style="color: white">Introduction</b>  
      SaltyMicro  is  a   suite  of  micro-services  intended  to gather,   save,
-     predict  and display data from the popular website https://www.SaltyBet.com.
+     predict and display data from the popular website https://www.SaltyBet.com.
       The suite  is intended to be comprised  of 4 programs, although only 3 are
       currently in development.
 
@@ -85,7 +85,7 @@ Updated: August 3rd, 2021
 
      In addition the  SDC will scrape out  the Fighters and try to  find them in
      the FIGHTERS table. If the fighter is already in the database, the SDC will
-     update their stats with the new information acquired from their recent bout.
+     update their stats with  new information acquired  from  their recent bout.
      The  FIGHTERS  table  contains  a  lot  of  information  including  obvious
      information  like the  fighter's  name, along  with  some more  interesting
      information like win/loss record, record  winning streak, number of upsets,
@@ -171,7 +171,7 @@ Updated: August 3rd, 2021
 
 ################################################################################
 
-                       Below are some data flow examples:
+                       Below are some dataflow examples:
      
 ################################################################################
      
