@@ -8,10 +8,10 @@ Updated: August 2nd, 2021
 
 <b>Introduction</b>
      Homenet is my home network. When creating my company, Gyokuro LLC, I didn't
-     quite know exactly what I wanted to do or where I would end  up. Inorder to
-     facilitate productivity, it was  imperative  to create  a flexible network.
+     quite know exactly what I wanted to do  or where  I would end  up. In order 
+     to facilitate productivity, it was imperative to create a flexible network.
      Networking  can be  time consuming. I  wanted to make  sure my home network
-     embodied a "set it  and forget it" archatecture; one that could contract or
+     embodied a "set it  and forget it" architecture; one that could contract or
      expand without much effort.
 
 <b>Physical Devices</b>
@@ -33,10 +33,9 @@ Updated: August 2nd, 2021
           redundant networked storage.I use GOLDENEYE as NFS storage in Proxmox.
 
      Desktop_2 (PERFECT-DARK):
-          PERFECT-DARK  my desktop.  Installed on  PERFECT-DARK  is Windows  10.
+          PERFECT-DARK  is my desktop. Installed on  PERFECT-DARK is Windows 10.
           PERFECT-DARK has an Intel  Core i5-9600K, 16GB of  memory, a  1TB SATA
-          SSD, and  a 500GB  M.2 NVMe  SSD. PERFECT-DARK  is basically a jumpbox
-          for the rest of my environment.
+          SSD, and  a 500GB  M.2 NVMe  SSD.
 
 
       Netgear-R6230 Router (venus):
@@ -100,7 +99,7 @@ Updated: August 2nd, 2021
                VLAN-8.
                
           VLAN-20 (fun)
-               VLAN-20 is for servers that serve a putpose other  than  utility.
+               VLAN-20 is for servers that serve a purpose other  than  utility.
                If I were to have a Minecraft server it would go here.  
 
           VLAN-24 (prod-dmz):

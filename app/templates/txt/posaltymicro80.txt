@@ -8,7 +8,7 @@ Updated: August 3rd, 2021
 
 <b style="color: white">Introduction</b>  
      SaltyMicro  is  a   suite  of  micro-services  intended  to gather,   save,
-     predict  and displaydata from the popular website https://www.SaltyBet.com.
+     predict  and display data from the popular website https://www.SaltyBet.com.
       The suite  is intended to be comprised  of 4 programs, although only 3 are
       currently in development.
 
@@ -85,11 +85,11 @@ Updated: August 3rd, 2021
 
      In addition the  SDC will scrape out  the Fighters and try to  find them in
      the FIGHTERS table. If the fighter is already in the database, the SDC will
-     update their stats with the new information aquired from their recent bout.
+     update their stats with the new information acquired from their recent bout.
      The  FIGHTERS  table  contains  a  lot  of  information  including  obvious
      information  like the  fighter's  name, along  with  some more  interesting
      information like win/loss record, record  winning streak, number of upsets,
-     and an ELO rakning.
+     and an ELO ranking.
 
      The ELO  ranking system  is similar  to the one  used to  rank professional
      chess players in the  FIDE World Chess Federation. It uses a  K value of 40
@@ -171,7 +171,7 @@ Updated: August 3rd, 2021
 
 ################################################################################
 
-                       Below are some dataflow examples:
+                       Below are some data flow examples:
      
 ################################################################################
      
@@ -279,7 +279,7 @@ Updated: August 3rd, 2021
      storage.
 
      Email/SMS Alerts: I plan  on adding a feature to SBO  that notifies me when
-     particular fighters  are about to  fight. Since SaltyBet is  ramdomized, It
+     particular fighters  are about to  fight. Since SaltyBet is  randomized, It
      can be difficult to catch a  fight between my favorite fighters. Having SBO
      monitoring pre-games  for particular fighters  and alerting me when  one is
      about to fight would be nice to have.
@@ -288,4 +288,4 @@ Updated: August 3rd, 2021
      began writing SUI, as have my knowledge of python libraries. I intend to go
      back and review my  code and try to condense it as  much as possible. There
      are  also some  inefficiencies  in how  web-content is  served.  I plan  on
-     optimizing this aswell to reduce the time it takes to load content in SUI.
+     optimizing this as well to reduce the time it takes to load content in SUI.

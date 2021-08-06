@@ -113,6 +113,6 @@ Updated  August 3rd, 2021
      All the CSS and HTML are handled automatically                            .
 
 <b style="color: white">Future Development</b> 
-     I plan on adding some eastereggs to my website. There might already be some 
-     hidden around...
+     I plan on  adding some  easter eggs  to my website. There might  already be 
+     some hidden around...
 
